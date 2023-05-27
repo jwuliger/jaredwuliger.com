@@ -1,10 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Nimbus Sans';
+    src: url('./assets/fonts/NimbusSanL-Bol.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('./assets/fonts/Oswald-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html,
 body {
     height: 100%;
-}
-body {
     margin: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+    background-image: url('./assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.app-container {
+    margin: 25px;
+}
+
+.mat-typography h1.app-page-header {
+    font-family: Oswald;
+    font-size: 40px;
+    padding-top: 5px;
 }

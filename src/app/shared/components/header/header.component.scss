@@ -1,0 +1,33 @@
+.app-header {
+    height: 90px;
+    background: #f9ac19;
+}
+
+.app-header-spacer {
+    flex: 1 1 auto;
+}
+
+.app-head-navbar a {
+    font-family: 'Nimbus Sans';
+    font-size: 15px;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    margin-right: 25px;
+}
+
+.app-head-navbar a:hover {
+    color: white;
+}
+
+.app-head-navbar a.selected {
+    color: white;
+}
+
+.app-logo {
+    margin-left: 10px;
+}
+
+.app-last-nav-item {
+    margin-right: 10px !important;
+}
