@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { PageTitleService } from './core/services/page-title.service';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    template: `
+        <app-header></app-header>
+        <main class="app-container">
+            <router-outlet></router-outlet>
+        </main>
+    `
 })
 export class AppComponent {
-    title = 'jmw';
+    constructor(private pageTitleService: PageTitleService) {}
 }
