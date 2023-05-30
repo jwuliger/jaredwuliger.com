@@ -24,12 +24,19 @@ body {
     background-position: center;
 }
 
-.app-container {
-    margin: 25px;
-}
-
 .mat-typography h1.app-page-header {
     font-family: Oswald;
     font-size: 40px;
     padding-top: 5px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1;
+    margin: 15px;
 }

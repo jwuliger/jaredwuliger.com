@@ -9,7 +9,7 @@
 
 .app-head-navbar a {
     font-family: 'Nimbus Sans';
-    font-size: 14px;
+    font-size: 13px;
     text-decoration: none;
     outline: none;
     color: black;
@@ -30,4 +30,8 @@
 
 .app-last-nav-item {
     margin-right: 10px !important;
+}
+
+.mat-menu-panel.ng-trigger {
+    background-color: #f9ac19 !important;
 }
