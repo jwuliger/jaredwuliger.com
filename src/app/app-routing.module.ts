@@ -53,7 +53,15 @@ const routes: Routes = [
                 (m) => m.ContactModule
             )
     },
-    { path: '**', redirectTo: 'home' }
+    {
+        path: 'not-found',
+        data: { pageTitle: `Contact - ${name}` },
+        loadChildren: () =>
+            import('./features/not-found/not-found.module').then(
+                (m) => m.NotFoundModule
+            )
+    },
+    { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
