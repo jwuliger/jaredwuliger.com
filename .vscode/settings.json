@@ -1,3 +1,9 @@
 {
-    "cSpell.words": ["opentype", "truetype"]
+    "cSpell.words": [
+        "iisnode",
+        "nguniversal",
+        "opentype",
+        "prerender",
+        "truetype"
+    ]
 }

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 const name = 'Jared Wuliger | Senior Software Engineer';
 
 const routes: Routes = [
+    { path: '', pathMatch: 'full', redirectTo: '/home' },
     {
         path: 'home',
         data: { pageTitle: name },
@@ -65,7 +66,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [
+        RouterModule.forRoot(routes, {
+            initialNavigation: 'enabledBlocking'
+        })
+    ],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}
