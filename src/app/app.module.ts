@@ -2,6 +2,7 @@ import {
     BrowserModule,
     provideClientHydration
 } from '@angular/platform-browser';
+import { NgModule, isDevMode } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,8 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { NgModule } from '@angular/core';
 import { PageTitleService } from './core/services/page-title.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
     declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -26,7 +27,14 @@ import { PageTitleService } from './core/services/page-title.service';
         MatToolbarModule,
         MatButtonModule,
         MatIconModule,
-        MatMenuModule
+        MatMenuModule,
+
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     providers: [PageTitleService, provideClientHydration()],
     bootstrap: [AppComponent]
