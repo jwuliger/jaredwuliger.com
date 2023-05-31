@@ -2,12 +2,25 @@
     background-color: #000000;
     color: white;
     padding: 15px;
-    height: 30px;
-    opacity: 0.9;
+    height: 40px;
+    opacity: 0.8;
 }
 
-.container {
-    margin-top: 6px;
+.flex-container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item {
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.footer-padding {
+    margin-top: -3px;
+}
+
+.footer-icon-padding {
+    margin-top: -5px;
 }
