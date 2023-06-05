@@ -1,5 +1,19 @@
 <div class="home-page-container">
-    <div class="hero-message">Cutting-edge App Development</div>
-    <div class="hero-sub-message">Book a free strategy call with me today!</div>
+    <ngx-typed-js
+        class="hero-message"
+        [strings]="['Development', 'Engineering', 'Architecture', 'Consultant']"
+        [typeSpeed]="100"
+        [loop]="true"
+        [startDelay]="500"
+        [fadeOut]="true"
+        [fadeOutDelay]="100"
+        [showCursor]="false"
+    >
+        Cutting-edge App
+        <span class="typing"></span>
+    </ngx-typed-js>
+
+    <!-- <div class="hero-message">Cutting-edge App Development</div> -->
+    <div class="hero-sub-message">Book a free strategy call today!</div>
     <div><button mat-flat-button class="hero-cta-btn">Learn More</button></div>
 </div>
