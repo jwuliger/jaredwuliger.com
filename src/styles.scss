@@ -17,18 +17,24 @@ body {
     height: 100%;
     margin: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-
     background-image: url('./assets/bg.jpg');
     background-repeat: repeat;
     background-size: cover;
     background-position: center;
 }
 
-.mat-typography h1.app-page-header {
-    font-family: Oswald;
+h1.app-page-header {
+    font-family: 'Oswald';
     font-size: 40px;
-    padding-top: 5px;
-    // position: absolute;
+    padding: 20px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
 }
 
 .app-container {
@@ -37,6 +43,10 @@ body {
     height: 100%;
 }
 
-.content {
+.app-main-content {
     flex: 1;
+}
+
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+    background: #ebebeb;
 }

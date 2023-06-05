@@ -1,129 +1,28 @@
-// TODO: Refactor this file to use a better responsive method
-
-.hero {
-    text-align: center;
+.home-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-/* Extra small devices (phones, less than 576px) */
 .hero-message {
-    margin-top: 10%;
-    font-family: Oswald;
-    font-size: 28px;
+    font-family: 'Oswald';
+    font-size: 8vmin;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) {
-    .hero-message {
-        font-size: 40px;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) {
-    .hero-message {
-        font-size: 50px;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-    .hero-message {
-        font-size: 60px;
-    }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
-    .hero-message {
-        font-size: 80px;
-    }
-}
-
-/* Extra small devices (phones, less than 576px) */
 .hero-sub-message {
-    margin-top: -15px;
-    font-family: Oswald;
-    font-size: 20px;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) {
-    .hero-sub-message {
-        margin-top: 15px;
-        font-size: 25px;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) {
-    .hero-sub-message {
-        margin-top: 30px; /* Adjust as needed for tablets */
-        font-size: 30px; /* Adjust as needed for tablets */
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-    .hero-sub-message {
-        margin-top: 35px; /* Adjust as needed for desktops */
-        font-size: 35px; /* Adjust as needed for desktops */
-    }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
-    .hero-sub-message {
-        margin-top: 45px; /* Adjust as needed for large desktops */
-        font-size: 40px; /* Adjust as needed for large desktops */
-    }
+    margin-top: 5vmin;
+    font-family: 'runda', sans-serif;
+    font-size: 4vmin;
 }
 
 .hero-cta-btn {
-    margin-top: 15px;
+    margin-top: 7vmin;
     background: #f9ac19 !important;
     color: white !important;
     width: 135px !important;
     height: 40px !important;
     font-family: 'Nimbus Sans';
     font-size: 14px;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) {
-    .hero-cta-btn {
-        margin-top: 30px;
-        width: 150px !important;
-        height: 50px !important;
-        font-size: 16px;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) {
-    .hero-cta-btn {
-        margin-top: 30px;
-        width: 150px !important;
-        height: 50px !important;
-        font-size: 16px;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-    .hero-cta-btn {
-        margin-top: 50px;
-        width: 160px !important;
-        height: 55px !important;
-        font-size: 17px;
-    }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
-    .hero-cta-btn {
-        margin-top: 50px;
-        width: 160px !important;
-        height: 55px !important;
-        font-size: 17px;
-    }
 }

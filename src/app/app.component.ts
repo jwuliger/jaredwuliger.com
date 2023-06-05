@@ -6,7 +6,7 @@ import { PageTitleService } from './core/services/page-title.service';
     template: `
         <div class="app-container">
             <app-header></app-header>
-            <main class="content">
+            <main class="app-main-content">
                 <router-outlet></router-outlet>
             </main>
             <app-footer></app-footer>
