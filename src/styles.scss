@@ -22,21 +22,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-    background-image: url('./assets/bg.jpg');
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.mat-typography h1 {
-    margin: 0;
+    // background-image: url('./assets/bg.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
 }
 
 h1.app-page-header {
+    margin: 0;
     font-family: 'Oswald';
     font-size: 40px;
     padding-left: 20px;
-    padding-top: 17px;
+    padding-top: 20px;
 }
 
 .app-container {
