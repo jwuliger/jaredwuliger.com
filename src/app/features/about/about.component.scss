@@ -40,7 +40,13 @@
     line-height: 1.8;
 }
 
-// .mat-mdc-outlined-button.mat-unthemed {
-//     color: #f9ac19;
-//     border-color: #f9ac19;
-// }
+.app-about-img {
+    width: 30vmax;
+    margin-left: auto;
+}
+
+.app-about-img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
