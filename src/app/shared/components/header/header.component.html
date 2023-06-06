@@ -11,10 +11,8 @@
     <ng-container *ngIf="(isSmallScreen$ | async) === false; else mobileMenu">
         <nav class="app-head-navbar">
             <a routerLink="about" routerLinkActive="selected"> ABOUT</a>
-            <a routerLink="services" routerLinkActive="selected">SERVICES</a>
             <a routerLink="projects" routerLinkActive="selected">PROJECTS</a>
-            <a routerLink="blog" routerLinkActive="selected">BLOG</a>
-            <a routerLink="faq" routerLinkActive="selected">FAQ</a>
+            <a routerLink="services" routerLinkActive="selected">SERVICES</a>
             <a
                 routerLink="contact"
                 routerLinkActive="selected"
@@ -38,17 +36,11 @@
     <button mat-menu-item routerLink="/about">
         <span>About</span>
     </button>
-    <button mat-menu-item routerLink="/services">
-        <span>Services</span>
-    </button>
     <button mat-menu-item routerLink="/projects">
         <span>Projects</span>
     </button>
-    <button mat-menu-item routerLink="/blog">
-        <span>Blog</span>
-    </button>
-    <button mat-menu-item routerLink="/faq">
-        <span>FAQ</span>
+    <button mat-menu-item routerLink="/services">
+        <span>Services</span>
     </button>
     <button mat-menu-item routerLink="/contact">
         <span>Contact</span>

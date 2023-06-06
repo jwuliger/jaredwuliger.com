@@ -35,18 +35,6 @@ const routes: Routes = [
             )
     },
     {
-        path: 'faq',
-        data: { pageTitle: `FAQ - ${name}` },
-        loadChildren: () =>
-            import('./features/faq/faq.module').then((m) => m.FaqModule)
-    },
-    {
-        path: 'blog',
-        data: { pageTitle: `Blog - ${name}` },
-        loadChildren: () =>
-            import('./features/blog/blog.module').then((m) => m.BlogModule)
-    },
-    {
         path: 'contact',
         data: { pageTitle: `Contact - ${name}` },
         loadChildren: () =>
