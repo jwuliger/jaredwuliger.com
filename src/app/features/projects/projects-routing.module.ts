@@ -7,6 +7,11 @@ const routes: Routes = [
     {
         path: '',
         component: ProjectsComponent
+    },
+    {
+        path: 'detail',
+        loadChildren: () =>
+            import('./detail/detail.module').then((m) => m.DetailModule)
     }
 ];
 
