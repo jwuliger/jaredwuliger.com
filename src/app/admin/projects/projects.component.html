@@ -24,14 +24,20 @@
 
         <div>
             <div style="font-weight: 500">Details Page Image</div>
-            <!-- (change)="onImageSelected($event)" -->
-            <input type="file" formControlName="image" />
+            <input
+                type="file"
+                formControlName="image"
+                (change)="onImageSelected($event)"
+            />
         </div>
 
         <div style="margin-top: 15px">
             <div style="font-weight: 500">List Page Thumbnail</div>
-            <!-- (change)="onThumbnailSelected($event)"  -->
-            <input type="file" formControlName="thumbnail" />
+            <input
+                type="file"
+                formControlName="thumbnail"
+                (change)="onThumbnailSelected($event)"
+            />
         </div>
 
         <div style="margin-top: 20px">
