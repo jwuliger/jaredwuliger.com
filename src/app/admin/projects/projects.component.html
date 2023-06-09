@@ -1,0 +1,48 @@
+<h1 class="app-page-header">ADD PROJECTS</h1>
+<div class="m-5">
+    <form [formGroup]="projectForm" (ngSubmit)="createProject()">
+        <div>
+            <mat-form-field appearance="fill" class="input-full-width">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title" />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" class="input-full-width">
+                <mat-label>Caption</mat-label>
+                <input matInput formControlName="caption" />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" class="input-full-width">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <div style="font-weight: 500">Details Page Image</div>
+            <!-- (change)="onImageSelected($event)" -->
+            <input type="file" formControlName="image" />
+        </div>
+
+        <div style="margin-top: 15px">
+            <div style="font-weight: 500">List Page Thumbnail</div>
+            <!-- (change)="onThumbnailSelected($event)"  -->
+            <input type="file" formControlName="thumbnail" />
+        </div>
+
+        <div style="margin-top: 20px">
+            <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="projectForm.invalid"
+            >
+                Create Project
+            </button>
+        </div>
+    </form>
+</div>

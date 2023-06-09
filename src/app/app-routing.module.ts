@@ -35,6 +35,12 @@ const routes: Routes = [
             )
     },
     {
+        path: 'admin',
+        data: { pageTitle: `Admin - ${name}` },
+        loadChildren: () =>
+            import('./admin/admin.module').then((m) => m.AdminModule)
+    },
+    {
         path: 'contact',
         data: { pageTitle: `Contact - ${name}` },
         loadChildren: () =>
