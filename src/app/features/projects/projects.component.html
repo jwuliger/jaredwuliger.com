@@ -1,6 +1,10 @@
 <h1 class="app-page-header">PROJECTS</h1>
 <div class="app-projects-lead">I should write something here.</div>
 <div class="masonry">
+    <span *ngFor="let project of projects">
+        {{ project.title }}
+    </span>
+
     <a routerLink="/projects/detail/Triangle Mental Health">
         <div class="item shadow">
             <img

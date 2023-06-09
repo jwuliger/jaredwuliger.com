@@ -3,16 +3,10 @@ import {
     provideClientHydration
 } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
-import {
-    ScreenTrackingService,
-    UserTrackingService,
-    getAnalytics,
-    provideAnalytics
-} from '@angular/fire/analytics';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,17 +39,12 @@ import { environment } from '../environments/environment';
             // or after 30 seconds (whichever comes first).
             registrationStrategy: 'registerWhenStable:30000'
         }),
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideAnalytics(() => getAnalytics()),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => getFirestore())
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireAuthModule
     ],
-    providers: [
-        PageTitleService,
-        ScreenTrackingService,
-        UserTrackingService,
-        provideClientHydration()
-    ],
+    exports: [AngularFireModule, AngularFirestoreModule, AngularFireAuthModule],
+    providers: [PageTitleService, provideClientHydration()],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
