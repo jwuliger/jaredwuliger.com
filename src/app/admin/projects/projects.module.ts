@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
 import { ProjectsComponent } from './projects.component';
 import { ProjectsRoutingModule } from './projects-routing.module';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
     declarations: [ProjectsComponent],
@@ -18,7 +19,9 @@ import { ProjectsRoutingModule } from './projects-routing.module';
 
         MatFormFieldModule,
         MatInputModule,
-        MatButtonModule
+        MatButtonModule,
+
+        QuillModule.forRoot()
     ]
 })
 export class ProjectsModule {}

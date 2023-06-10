@@ -16,10 +16,11 @@
         </div>
 
         <div>
-            <mat-form-field appearance="fill" class="input-full-width">
+            <quill-editor formControlName="description"></quill-editor>
+            <!-- <mat-form-field appearance="fill" class="input-full-width">
                 <mat-label>Description</mat-label>
                 <textarea matInput formControlName="description"></textarea>
-            </mat-form-field>
+            </mat-form-field> -->
         </div>
 
         <div>
@@ -29,6 +30,9 @@
                 formControlName="image"
                 (change)="onImageSelected($event)"
             />
+            <div *ngIf="imageUploadProgress | async as progress">
+                <progress value="{{ progress }}" max="100"></progress>
+            </div>
         </div>
 
         <div style="margin-top: 15px">
@@ -38,6 +42,9 @@
                 formControlName="thumbnail"
                 (change)="onThumbnailSelected($event)"
             />
+            <div *ngIf="thumbnailUploadProgress | async as progress">
+                <progress value="{{ progress }}" max="100"></progress>
+            </div>
         </div>
 
         <div style="margin-top: 20px">

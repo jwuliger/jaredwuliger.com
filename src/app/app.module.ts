@@ -6,6 +6,7 @@ import { NgModule, isDevMode } from '@angular/core';
 
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -41,9 +42,15 @@ import { environment } from '../environments/environment';
         }),
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        AngularFireStorageModule
     ],
-    exports: [AngularFireModule, AngularFirestoreModule, AngularFireAuthModule],
+    exports: [
+        AngularFireModule,
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule
+    ],
     providers: [PageTitleService, provideClientHydration()],
     bootstrap: [AppComponent]
 })
