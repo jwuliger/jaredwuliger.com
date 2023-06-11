@@ -1,3 +1,7 @@
 .input-full-width {
     width: 100%;
 }
+
+::ng-deep .ql-editor {
+    height: 300px;
+}

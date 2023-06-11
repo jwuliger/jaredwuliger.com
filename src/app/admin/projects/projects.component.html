@@ -1,5 +1,5 @@
 <h1 class="app-page-header">ADD PROJECTS</h1>
-<div class="m-5">
+<mat-card style="margin-top: 20px" class="m-5 p-5">
     <form [formGroup]="projectForm" (ngSubmit)="createProject()">
         <div>
             <mat-form-field appearance="fill" class="input-full-width">
@@ -15,12 +15,8 @@
             </mat-form-field>
         </div>
 
-        <div>
+        <div style="margin-bottom: 15px">
             <quill-editor formControlName="description"></quill-editor>
-            <!-- <mat-form-field appearance="fill" class="input-full-width">
-                <mat-label>Description</mat-label>
-                <textarea matInput formControlName="description"></textarea>
-            </mat-form-field> -->
         </div>
 
         <div>
@@ -58,4 +54,4 @@
             </button>
         </div>
     </form>
-</div>
+</mat-card>

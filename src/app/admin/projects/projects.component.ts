@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable, forkJoin } from 'rxjs';
-import { delay, filter, finalize, switchMap } from 'rxjs/operators';
+import { Observable, forkJoin, from } from 'rxjs';
+import { filter, switchMap } from 'rxjs/operators';
 
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Component } from '@angular/core';
@@ -17,8 +17,8 @@ export class ProjectsComponent {
     projectForm: FormGroup;
     imageFile: File | null = null;
     thumbnailFile: File | null = null;
-    imageUploadProgress: Observable<number> | null = null; // Add this line
-    thumbnailUploadProgress: Observable<number> | null = null; // Add this line
+    imageUploadProgress: Observable<number> | null = null;
+    thumbnailUploadProgress: Observable<number> | null = null;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -74,9 +74,11 @@ export class ProjectsComponent {
             }).subscribe((results) => {
                 projectData.image = results.image;
                 projectData.thumbnail = results.thumbnail;
-                console.log(projectData);
                 this.projectService.createProject(projectData);
                 this.projectForm.reset();
+                this.projectForm.markAsPristine();
+                this.projectForm.markAsUntouched();
+                this.projectForm.updateValueAndValidity();
                 this.imageFile = null;
                 this.thumbnailFile = null;
             });
@@ -98,9 +100,8 @@ export class ProjectsComponent {
                     filter((value) => value !== undefined)
                 ) as Observable<number>,
             downloadUrl: task.snapshotChanges().pipe(
-                finalize(() => {}),
-                delay(3000), // wait for 3 seconds
-                switchMap(() => ref.getDownloadURL())
+                filter((snapshot) => snapshot?.state === 'success'),
+                switchMap(() => from(ref.getDownloadURL()))
             )
         };
     }
