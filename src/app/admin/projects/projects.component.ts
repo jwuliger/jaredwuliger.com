@@ -7,6 +7,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Component } from '@angular/core';
 import { Project } from './../../features/projects/projects-model';
 import { ProjectService } from './../../features/projects/projects.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-projects',
@@ -23,7 +24,8 @@ export class ProjectsComponent {
     constructor(
         private formBuilder: FormBuilder,
         private projectService: ProjectService,
-        private storage: AngularFireStorage
+        private storage: AngularFireStorage,
+        private router: Router
     ) {
         this.projectForm = this.formBuilder.group({
             caption: ['', Validators.required],
@@ -74,11 +76,9 @@ export class ProjectsComponent {
             }).subscribe((results) => {
                 projectData.image = results.image;
                 projectData.thumbnail = results.thumbnail;
-                this.projectService.createProject(projectData);
-                this.projectForm.reset();
-                this.projectForm.markAsPristine();
-                this.projectForm.markAsUntouched();
-                this.projectForm.updateValueAndValidity();
+                this.projectService.createProject(projectData).then(() => {
+                    this.router.navigate(['/projects']);
+                });
                 this.imageFile = null;
                 this.thumbnailFile = null;
             });
@@ -90,7 +90,14 @@ export class ProjectsComponent {
         path: string
     ): { progress: Observable<number>; downloadUrl: Observable<string> } {
         const ref = this.storage.ref(path);
-        const task = ref.put(file);
+
+        // Define the metadata to keep the file from loading on every page load
+        const metadata = {
+            cacheControl: 'public, max-age=31536000' // 1 year
+        };
+
+        // Include the metadata in the upload task
+        const task = ref.put(file, metadata);
 
         // get notified when the download URL is available
         return {

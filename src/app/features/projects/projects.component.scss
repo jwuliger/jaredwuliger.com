@@ -21,25 +21,19 @@
     box-sizing: border-box;
 }
 
-.item-content {
-    margin-top: 10px;
+.project-caption {
     text-align: center;
     font-size: 0.9rem;
-    // font-family: 'Nimbus Sans';
+    font-style: italic;
 }
 
-// .item {
-//     position: relative; /* Create a new positioning context for .overlay-text */
-// }
-
-// .overlay-text {
-//     position: absolute; /* Position absolutely within .item */
-//     top: 0; /* Align to the top */
-//     left: 0; /* Align to the left */
-//     color: black; /* White text color */
-//     font-size: 24px; /* Larger text size */
-//     padding: 20px; /* Some padding around the text */
-// }
+.project-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Nimbus Sans';
+}
 
 .item img {
     max-width: 100%;
